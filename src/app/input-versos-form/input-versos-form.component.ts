@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PHRASES } from '../phrases';
 
 @Component({
   selector: 'app-input-versos-form',
@@ -8,9 +9,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class InputVersosFormComponent implements OnInit {
 
-  constructor() { }
+  inputVersosForm: FormGroup;
 
-  ngOnInit() {
+  constructor(private fb: FormBuilder) { 
+    this.inputVersosForm = this.fb.group({
+      verso: ['', Validators.required]
+    });
   }
 
+  ngOnInit() {}
+  addPhrases(){
+    PHRASES.push(this.inputVersosForm.value.verso);
+  }
 }

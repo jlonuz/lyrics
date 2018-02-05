@@ -5,7 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from './lyric-list/lyric-list.component';
 import { InputVersosFormComponent } from './input-versos-form/input-versos-form.component';
 
 
